@@ -18,7 +18,7 @@ module module_top_deco_gray # (
     wire [3 : 0] codigo_bin;
     wire [7 : 0] codigo_bcd;
 
-    module_lectura_deco_gray # (4,INPUT_REFRESH) SUBMODULE_INPUT (
+    module_input_deco_gray # (4,INPUT_REFRESH) SUBMODULE_INPUT (
 
         .clk_i         (clk_pi),
         .rst_i         (rst_pi),
@@ -38,7 +38,7 @@ module module_top_deco_gray # (
         .bcd_o (codigo_bcd)
     );
 
-    module_7_segmentos # (DISPLAY_REFRESH) SUBMODULE_DISPLAY (
+    module_7_segments # (DISPLAY_REFRESH) SUBMODULE_DISPLAY (
 
         .clk_i    (clk_pi),
         .rst_i    (rst_pi),
