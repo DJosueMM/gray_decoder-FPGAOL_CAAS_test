@@ -35,6 +35,9 @@ module test;
         #30;
 
         rst_i = 1;
+
+        #100;
+        
         codigo_gray_i = 4'b0001;
 
         #100;
