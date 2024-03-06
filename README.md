@@ -72,7 +72,7 @@ IO_LOC  "codigo_gray_pi[3]" 25;
 IO_PORT "codigo_gray_pi[3]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN; //Input gray [3]
 ```
 
-# Design synthesis and programming the FPGA on the Caas platform
+### Design synthesis and programming the FPGA on the Caas platform
 
 To perform synthesis and programming of the FPGA on the Caas platform, follow these steps:
 
@@ -180,7 +180,7 @@ IO_LOC  "codigo_gray_pi[3]" 25;
 IO_PORT "codigo_gray_pi[3]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN; //Input gray [3]
 ```
 
-# Síntesis de diseño y programación del FPGA en la plataforma Caas
+## Síntesis del diseño y programación de la FPGA en la plataforma Caas
 
 Para realizar la síntesis y programación de la FPGA en la plataforma Caas, sigue estos pasos:
 
