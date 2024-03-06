@@ -67,9 +67,9 @@ IO_LOC  "codigo_gray_pi[3]" 25;
 IO_PORT "codigo_gray_pi[3]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN; //Input gray [3]
 ```
 
-# Design synthesis and programming the FPGA on the Cass platform
+# Design synthesis and programming the FPGA on the Caas platform
 
-To perform synthesis and programming of the FPGA on the Cass platform, follow these steps:
+To perform synthesis and programming of the FPGA on the Caas platform, follow these steps:
 
 1. Go to https://caas.symbioticeda.com/ and select the `GitHub Project` mode as shown in the following image:
 
