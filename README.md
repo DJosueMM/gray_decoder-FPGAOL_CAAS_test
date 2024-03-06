@@ -2,14 +2,13 @@
 
 In this project, the user inputs a 4-bit Gray code to be decoded into binary on LEDs and displayed in decimal on a multiplexed 7-segment display.
 
-En la siguiente imagen se muestra el esquematico del circuito.
+The following image shows the schematic of the circuit.
 
 ![image](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/fda98234-75f9-49ed-a039-8a3e77e8f012)
 
-Las conexiones deben corresponder con las constraints del proyecto que se encuentran en `/src/design/module_deco_gray.cst`
+The connections should correspond to the constraints of the project found in `/src/design/module_deco_gray.cst`
 
 ```Verilog
-
 IO_LOC  "catodo_po[6]"  29;
 IO_PORT "catodo_po[6]"  IO_TYPE=LVCMOS33; //Cathode g
 
@@ -68,9 +67,44 @@ IO_LOC  "codigo_gray_pi[3]" 25;
 IO_PORT "codigo_gray_pi[3]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN; //Input gray [3]
 ```
 
-# Design synthesis and programming the fpga on the cass platform
+# Design synthesis and programming the FPGA on the Cass platform
 
-La ruta del repositorio donde estan los modulos a sintetizar es: https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/tree/main/src/design
+To perform synthesis and programming of the FPGA on the Cass platform, follow these steps:
 
-Se debe ingresar a https://caas.symbioticeda.com/
+1. Go to https://caas.symbioticeda.com/ and select the `GitHub Project` mode as shown in the following image:
+
+![Screenshot from 2024-03-06 11-49-55](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/018297c1-62cd-4594-9083-89027b3f4d6a)
+
+2. Enter the repository link where the modules to be synthesized are located: `https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/tree/main/src/design` in the space indicated by the red arrow.
+
+![Screenshot from 2024-03-06 12-08-00](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/9d23e3e3-6b46-47e2-8507-784426d819ff)
+
+3. Fill in the fields at the top with the following information:
+   - Name: the name to be given to the bitstream, for example `deco_gray_tangnano9k`
+   - FPGA part: the FPGA to be used, in this case `GW1NR-LV9QN88PC6\/I5`
+   - Backend: associated with the FPGA, in this case `gowin`
+   - Top module: the top module of the design, in this case `module_top_deco_gray`
+
+4. Finally, select the checkbox for `Use existing config file` indicated by the yellow arrow. This file is located in `/src/design/caas.conf`.
+
+```Verilog
+[caas]
+Server = https://caas.symbioticeda.com:18888/
+
+[project]
+Backend = gowin
+Part = GW1NR-LV9QN88PC6\/I5
+Top = module_top_deco_gray
+Bitname = top.fs
+Sources = module_7_segments.v, module_bin_to_bcd.v, module_input_deco_gray.v, module_top_deco_gray.v
+
+```
+
+This file contains all the information we entered earlier and the modules to be synthesized. If this file does not exist in the repository sources, the information must be entered manually.
+
+After completing the steps, the configuration should look like the following image, then press `Submit`.
+
+![Screenshot from 2024-03-06 12-35-53](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/e837fdb6-678b-4685-b04c-21cb59d59460)
+
+
 
