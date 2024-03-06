@@ -182,7 +182,7 @@ IO_PORT "codigo_gray_pi[3]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN; //Input gray [3]
 
 # Síntesis de diseño y programación del FPGA en la plataforma Caas
 
-Para realizar la síntesis y programación del FPGA en la plataforma Caas, sigue estos pasos:
+Para realizar la síntesis y programación de la FPGA en la plataforma Caas, sigue estos pasos:
 
 1. Ingresa a https://caas.symbioticeda.com/ y selecciona el modo `GitHub Project` como se muestra en la siguiente imagen:
 
@@ -193,10 +193,10 @@ Para realizar la síntesis y programación del FPGA en la plataforma Caas, sigue
 ![Captura de pantalla del 2024-03-06 12-08-00](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/9d23e3e3-6b46-47e2-8507-784426d819ff)
 
 3. Llena los campos en la parte superior con la siguiente información:
-   - Nombre: el nombre que se le dará al flujo de bits, por ejemplo `deco_gray_tangnano9k`
-   - Parte del FPGA: el FPGA que se utilizará, en este caso `GW1NR-LV9QN88PC6\/I5`
+   - Name: el nombre que se le dará al flujo de bits, por ejemplo `deco_gray_tangnano9k`
+   - FPGA part: el FPGA que se utilizará, en este caso `GW1NR-LV9QN88PC6\/I5`
    - Backend: asociado al FPGA, en este caso `gowin`
-   - Módulo superior: el módulo superior del diseño, en este caso `module_top_deco_gray`
+   - Top module: el módulo top del diseño, en este caso `module_top_deco_gray`
 
 4. Finalmente, selecciona la casilla `Use existing config file` indicada por la flecha amarilla. Este archivo se encuentra en `/src/design/caas.conf`.
    
