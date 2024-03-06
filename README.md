@@ -112,7 +112,7 @@ After completing the steps, the configuration should look like the following ima
 ![Screenshot from 2024-03-06 12-35-53](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/e837fdb6-678b-4685-b04c-21cb59d59460)
 
 
-## Decodificador-de-gray-a-binario-y-decimal-en-la-FPGA-TangNano9k
+## Decodificador de gray a binario y decimal en la FPGA TangNano9k
 En este proyecto, el usuario ingresa un código Gray de 4 bits que se decodifica en binario en LEDs y se muestra en decimal en un display de 7 segmentos multiplexado.
 
 La siguiente imagen muestra el esquemático del circuito.
