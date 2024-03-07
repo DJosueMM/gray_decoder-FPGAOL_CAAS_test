@@ -111,6 +111,49 @@ After completing the steps, the configuration should look like the following ima
 
 ![Screenshot from 2024-03-06 12-35-53](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/e837fdb6-678b-4685-b04c-21cb59d59460)
 
+## Load the bitstream into the FPGA
+
+Follow these steps to load the bitstream into the FPGA:
+
+1. Once the bitstream generation is completed in the previous section, the following functions will be available:
+
+    ![Fetch and show log](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/6a87b2d1-61c8-4dce-a27b-1ca152deac81)
+
+    - **Fetch and show log**: Displays the data of the logical and physical synthesis process. If an error occurs during the bitstream generation, the synthesis will fail, and the error can be consulted with this option.
+   
+    - **Download log**: Downloads the text file containing all the data of the synthesis process.
+   
+    - **Download bitstream**: Downloads the generated bitstream in .fs or .bit format.
+
+2. Additional steps are required for the "Program bitstream" option:
+
+    a. **Modify the USB driver on Windows**: If you have already done this on your computer, you can skip this step. Otherwise, refer to the [Windows USB driver configuration here](https://github.com/DJosueMM/open_source_fpga_environment#configuraci%C3%B3n-del-driver-usb-de-windows). This step is done only once.
+
+
+   b. After modifying the USB driver, connect the FPGA to the USB port and follow these steps:
+
+   1. Press the `Connect Local USB` button.
+ 
+      ![Connect Local USB](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/a2dd684d-ebda-4e94-b127-fd561fc57d10)
+      
+
+   2. Select `JTAG Debugger` in the appearing window.
+      
+      ![JTAG Debugger](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/9b4a50cc-2d34-47a5-8b64-db841613cd6b)
+      
+
+   3. Press the `Detect FPGA` button to establish the connection with the FPGA.
+
+      ![Detect FPGA](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/be782336-1adc-4667-8c73-9012c0d742d9)
+ 
+
+   4. Finally, press `Program Bitstream...`.
+   
+      ![Program Bitstream](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/e06bc000-50d0-4044-9f39-c281b5d06460)
+
+
+This concludes the tutorial.
+
 
 ## Decodificador de gray a binario y decimal en la FPGA TangNano9k
 En este proyecto, el usuario ingresa un código Gray de 4 bits que se decodifica en binario en LEDs y se muestra en decimal en un display de 7 segmentos multiplexado.
@@ -234,19 +277,29 @@ Siga estos pasos para cargar el bitstream en la FPGA:
 
 2. Para la opción "Program bitstream", se necesitan los siguientes pasos adicionales:
 
-    a. **Modificar el driver USB en Windows**: Consulte la [configuración del driver USB de Windows aquí](https://github.com/DJosueMM/open_source_fpga_environment#configuraci%C3%B3n-del-driver-usb-de-windows).
+    a. **Modificar el driver USB en Windows**: si ya hizo esto en la computadora puede omitirlo, de lo contrario, consulte la [configuración del driver USB de Windows aquí](https://github.com/DJosueMM/open_source_fpga_environment#configuraci%C3%B3n-del-driver-usb-de-windows), este paso se hace una única vez. 
 
    b. Después de modificar el driver USB, conecte la FPGA al puerto USB y siga estos pasos:
 
    1. Presione el botón `Connect Local USB`.
-   
+ 
       ![Connect Local USB](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/a2dd684d-ebda-4e94-b127-fd561fc57d10)
-   
-   2. Seleccione `JTAG Debugger` en la ventana que aparece.
-   
+      
+
+   3. Seleccione `JTAG Debugger` en la ventana que aparece.
+      
       ![JTAG Debugger](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/9b4a50cc-2d34-47a5-8b64-db841613cd6b)
-   
-   3. Presione el botón `Detect FPGA` para establecer la conexión con la FPGA.
-   
+      
+
+   4. Presione el botón `Detect FPGA` para establecer la conexión con la FPGA.
+
       ![Detect FPGA](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/be782336-1adc-4667-8c73-9012c0d742d9)
+ 
+
+   5. Por último, presione `Program Bitstream...`.
+   
+      ![Program Bitstream](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/e06bc000-50d0-4044-9f39-c281b5d06460)
+
+
+Con esto se da por concluido el tutorial.
 
