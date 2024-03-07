@@ -182,7 +182,7 @@ IO_PORT "codigo_gray_pi[3]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN; //Input gray [3]
 
 ### Síntesis del diseño y programación de la FPGA en la plataforma Caas
 
-Para realizar la síntesis y programación de la FPGA en la plataforma Caas, sigue estos pasos:
+Para realizar la síntesis de los módulos, sigue estos pasos:
 
 1. Ingresa a https://caas.symbioticeda.com/ y selecciona el modo `GitHub Project` como se muestra en la siguiente imagen:
 
@@ -218,4 +218,35 @@ Después de completar los pasos, la configuración debería lucir como en la sig
 
 ![Captura de pantalla del 2024-03-06 12-35-53](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/e837fdb6-678b-4685-b04c-21cb59d59460)
 
+## Cargar el bitstream en la FPGA
+
+Siga estos pasos para cargar el bitstream en la FPGA:
+
+1. Una vez que se haya completado la generación del bitstream en la sección anterior, se tendrán disponibles las siguientes funciones:
+
+    ![Fetch and show log](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/6a87b2d1-61c8-4dce-a27b-1ca152deac81)
+   
+    - **Fetch and show log**: Muestra los datos del proceso de síntesis lógica y física. Si ocurre un error durante la generación del bitstream, la síntesis fallará y se podrá consultar el error con esta opción.
+   
+    - **Download log**: Descarga el archivo de texto que contiene todos los datos del proceso de síntesis.
+   
+    - **Download bitstream**: Descarga el bitstream generado en formato .fs o .bit.
+
+2. Para la opción "Program bitstream", se necesitan los siguientes pasos adicionales:
+
+    a. **Modificar el driver USB en Windows**: Consulte la [configuración del driver USB de Windows aquí](https://github.com/DJosueMM/open_source_fpga_environment#configuraci%C3%B3n-del-driver-usb-de-windows).
+
+   b. Después de modificar el driver USB, conecte la FPGA al puerto USB y siga estos pasos:
+
+   1. Presione el botón `Connect Local USB`.
+   
+      ![Connect Local USB](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/a2dd684d-ebda-4e94-b127-fd561fc57d10)
+   
+   2. Seleccione `JTAG Debugger` en la ventana que aparece.
+   
+      ![JTAG Debugger](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/9b4a50cc-2d34-47a5-8b64-db841613cd6b)
+   
+   3. Presione el botón `Detect FPGA` para establecer la conexión con la FPGA.
+   
+      ![Detect FPGA](https://github.com/DJosueMM/gray_decoder-FPGAOL_CAAS_test/assets/81501061/be782336-1adc-4667-8c73-9012c0d742d9)
 
